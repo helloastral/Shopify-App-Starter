@@ -1,0 +1,5 @@
+type="backend"
+
+[commands]
+dev = "yarn dev"
+build = "yarn build"

@@ -1,0 +1,28 @@
+{
+  "name": "app-starter-t3",
+  "version": "1.0.0",
+  "main": "web/index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "shopify": "shopify",
+    "build": "shopify app build",
+    "dev": "shopify app dev",
+    "info": "shopify app info",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy",
+    "migrate:dev": "yarn workspace server prisma migrate dev"
+  },
+  "dependencies": {
+    "@shopify/app": "^3.47.5",
+    "@shopify/cli": "^3.47.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0"
+  },
+  "author": "storetools"
+}
