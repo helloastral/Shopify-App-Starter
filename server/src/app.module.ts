@@ -1,4 +1,4 @@
-import { Module, NestModule, MiddlewareConsumer } from "@nestjs/common";
+import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { SharedModule } from "./shared/shared.module";
 import { WebhooksModule } from "./modules/webhooks/webhooks.module";
@@ -18,6 +18,4 @@ import { DevtoolsModule } from "@nestjs/devtools-integration";
   controllers: [],
   providers: [],
 })
-export class AppModule implements NestModule {
-  async configure(consumer: MiddlewareConsumer) {}
-}
+export class AppModule {}
