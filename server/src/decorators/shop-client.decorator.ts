@@ -1,7 +1,14 @@
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 import shopify from "src/lib/shopify-app";
 
-type ApiType = "rest" | "gql" | "session";
+/**
+ * This decorator is used to inject the shopify rest or gql client into a controller method. There is one arguement required.
+ * Use `@ShopClient('rest') restClient` or `@ShopClient('gql') gqlClient` in your controller method. The default is gql.
+ * The way we use these client differ from the way we use shopify api js. Its not like `client.rest.Product.all()`.
+ * See documentation here: https://github.com/Shopify/shopify-api-js/tree/main/docs/reference/clients
+ */
+
+type ApiType = "rest" | "gql";
 
 export const ShopClient = createParamDecorator(
   async (apiType: ApiType = "gql", ctx: ExecutionContext) => {
@@ -12,8 +19,6 @@ export const ShopClient = createParamDecorator(
 
     if (apiType === "rest") {
       return new shopify.api.clients.Rest({ session });
-    } else if (apiType === "session") {
-      return session;
     }
 
     return new shopify.api.clients.Graphql({ session });

@@ -24,6 +24,7 @@ const shopify = shopifyApp({
     callbackPath: "/api/auth/callback",
   },
   webhooks: {
+    // We are going to use nest js to handle this in webhooks.controller.ts
     path: "/api/webhooks",
   },
   sessionStorage: new STSessionStorage(),

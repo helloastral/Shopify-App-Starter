@@ -8,13 +8,25 @@ import { PrismaService } from "./prisma.service";
 
 @Injectable()
 export class ShopifyService {
-  constructor(public readonly prisma: PrismaService) {}
+  shopifyApp: typeof shopify;
+
+  constructor(public readonly prisma: PrismaService) {
+    this.shopifyApp = shopify;
+  }
 
   getRestClient(session): RestClient {
-    return new shopify.api.clients.Rest({ session });
+    return new this.shopifyApp.api.clients.Rest({ session });
   }
 
   getGQLClient(session): GraphqlClient {
-    return new shopify.api.clients.Graphql({ session });
+    return new this.shopifyApp.api.clients.Graphql({ session });
+  }
+
+  get app() {
+    return this.shopifyApp;
+  }
+
+  get api() {
+    return this.shopifyApp.api;
   }
 }

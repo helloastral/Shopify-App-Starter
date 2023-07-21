@@ -6,6 +6,6 @@ import { ConfigService } from "./services/config.service";
 @Global()
 @Module({
   providers: [ShopifyService, PrismaService, ConfigService],
-  exports: [PrismaService, ConfigService],
+  exports: [PrismaService, ConfigService, ShopifyService],
 })
 export class SharedModule {}
