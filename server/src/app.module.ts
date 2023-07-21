@@ -9,6 +9,7 @@ import { DevtoolsModule } from "@nestjs/devtools-integration";
   imports: [
     DevtoolsModule.register({
       http: process.env.NODE_ENV !== "production",
+      port: 5434,
     }),
     ConfigModule.forRoot(),
     SharedModule,
