@@ -15,18 +15,17 @@ export default function HomePage() {
 
   return (
     <Page narrowWidth>
-      <TitleBar title="App name" />
       <Layout>
         <Layout.Section>
-          <Card sectioned>
+          <Card>
             <div className="text-2xl text-blue-700 font-bold">Products</div>
-            {/* {data?.body?.products && (
+            {data?.body?.products && (
               <ol>
                 {data?.body?.products.map((product: any, index: number) => (
                   <li key={index}>{product.title}</li>
                 ))}
               </ol>
-            )} */}
+            )}
           </Card>
         </Layout.Section>
       </Layout>
