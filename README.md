@@ -21,3 +21,4 @@ Look at the Dockerfile for the commands to run. You'll need to set the environme
 - NestJS
 - PrismaJS
 - Postgres
+- Swagger
