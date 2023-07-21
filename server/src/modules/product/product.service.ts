@@ -1,10 +1,13 @@
 import { Injectable } from "@nestjs/common";
+import { ShopifyService } from "src/shared/services/shopify.service";
 
 @Injectable()
 export class ProductService {
-  fetchProducts(client) {
-    return client.get({
-      path: "products",
+  constructor(private readonly shopify: ShopifyService) {}
+
+  fetchProducts(session: any) {
+    return this.shopify.api.rest.Product.all({
+      session,
     });
   }
 

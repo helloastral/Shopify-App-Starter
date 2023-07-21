@@ -1,14 +1,14 @@
 import { Controller, Get } from "@nestjs/common";
-import { ShopClient } from "src/decorators/shop-client.decorator";
 import { ProductService } from "./product.service";
+import { ShopSession } from "src/decorators/shop-session.decorator";
 
 @Controller("products")
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
   @Get()
-  async fetchProducts(@ShopClient("rest") client) {
+  async fetchProducts(@ShopSession() session) {
     console.log("fetching products");
-    return this.productService.fetchProducts(client);
+    return this.productService.fetchProducts(session);
   }
 }
