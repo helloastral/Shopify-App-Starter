@@ -4,7 +4,6 @@ import * as express from "express";
 import * as serveStatic from "serve-static";
 
 import shopify from "./lib/shopify-app.js";
-import GDPRWebhookHandlers from "./lib/gdpr.js";
 import bootstrap from "./nest-main.js";
 import setupSwagger from "./lib/setup-swagger.js";
 
@@ -23,6 +22,23 @@ const STATIC_PATH = join(
   `${isProd ? "dist" : ""}`,
 );
 
+/**
+ * Utility function to bypass middleware for a specific path
+ * @param path
+ * @param middleware
+ * @returns
+ */
+
+const unless = function (path, middleware) {
+  return function (req, res, next) {
+    if (path === req.originalUrl) {
+      return next();
+    } else {
+      return middleware(req, res, next);
+    }
+  };
+};
+
 async function main() {
   const app = express();
 
@@ -33,19 +49,23 @@ async function main() {
     shopify.auth.callback(),
     shopify.redirectToShopifyOrAppRoot(),
   );
-  app.post(
-    shopify.config.webhooks.path,
-    shopify.processWebhooks({ webhookHandlers: GDPRWebhookHandlers as any }),
-  );
+
+  // For webhooks, see webhook.controller.ts
 
   // If you are adding routes outside of the /api path, remember to
   // also add a proxy rule for them in web/frontend/vite.config.js
 
   const nestApp = await bootstrap(app);
 
-  nestApp.use("/api/*", shopify.validateAuthenticatedSession());
+  nestApp.use(
+    "/api/*",
+    unless("/api/webhooks", shopify.validateAuthenticatedSession()),
+  );
 
-  nestApp.use(express.json());
+  nestApp
+    .use("/api/webhooks", express.text({ type: "*/*" }))
+    .use(express.json({ limit: "50mb" }));
+
   nestApp.use(shopify.cspHeaders());
   nestApp.use(serveStatic(STATIC_PATH, { index: false }));
 
