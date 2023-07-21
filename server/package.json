@@ -26,16 +26,20 @@
     "@nestjs/core": "^9.3.9",
     "@nestjs/platform-express": "^9.3.9",
     "@nestjs/serve-static": "^3.0.1",
+    "@nestjs/swagger": "^7.1.2",
     "@prisma/client": "5",
     "@shopify/shopify-api": "^7.5.0",
     "@shopify/shopify-app-express": "^2.2.0",
     "@shopify/shopify-app-session-storage": "^1.1.6",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
     "prisma": "^5.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^4.4.0",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "swagger-themes": "^1.2.29"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.2.0",
