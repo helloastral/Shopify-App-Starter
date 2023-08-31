@@ -1,6 +1,5 @@
 <div align="center">
-  <h1>Shopify App Starter 🔮</h1>
-  <h2>By Storetools.io</h2>
+  <h1>App Starter By Storetools 🔮</h1>
   <p>
     The Fast-Track to Flawless Shopify Apps ✨
   </p>
