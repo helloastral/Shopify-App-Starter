@@ -1,0 +1,12 @@
+[phases.setup]
+# nixLibs = ["...", "libuuid", "libGL"]
+nixPkgs = ['nodejs', 'yarn']
+
+[phases.install]
+cmds = ['yarn install']
+
+[phases.build]
+cmds = ['yarn workspace client build','yarn workspace server build:prod']
+
+[start]
+cmd = 'node server/dist/main'
