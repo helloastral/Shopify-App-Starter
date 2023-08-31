@@ -22,9 +22,9 @@ export default function HomePage() {
       <Layout>
         <Layout.Section>
           <Card>
-            <div className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-300 to-red-600 mb-5">
+            <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-300 to-red-600 mb-5">
               Products
-            </div>
+            </h1>
 
             {products && (
               <ol>
