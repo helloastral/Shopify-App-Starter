@@ -91,4 +91,4 @@ async fetchProducts(@ShopClient('gql') gqlClient) {
 - Postgres
 - Swagger
 
-Checkout our apps at Storetools.io
+Checkout our apps at [storetools.io](https://storetools.io)
