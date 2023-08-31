@@ -2,6 +2,7 @@
 
 ![Frame 5](https://github.com/storetools/shopify-app-starter/assets/29296982/ff753124-10b2-4748-b7f2-03b030c3699d)
 
+This is the template we use at Storetools to build our Shopify apps.
 
 This is a fork of [App Starter Nest](https://github.com/storetools/App-Starter-Nest) using the `@shopify/shopify-app-express` package. This cleans up the code significantly.
 But we loose some functionality like being able to plug into the auth check functions to add our own logic.
@@ -15,6 +16,11 @@ But we loose some functionality like being able to plug into the auth check func
 5. Run `yarn dev`
 
 ## Deploying
+
+Checkout both `nixpacks.toml` and `Dockerfile`
+
+- nixpacks.toml: You can deploy it to Railway.app directly
+- Dockerfile: Deploy to any host using Docker. Eg: Render, Heroku, etc
 
 Look at the Dockerfile for the commands to run. You'll need to set the environment variables in your deployment environment.
 
