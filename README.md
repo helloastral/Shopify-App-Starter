@@ -1,4 +1,10 @@
-# Shopify App Starter by Storetools
+<div align="center">
+  <h1>Shopify App Starter 🔮</h1>
+  <h2>By Storetools.io</h2>
+  <p>
+    The Fast-Track to Flawless Shopify Apps ✨
+  </p>
+</div>
 
 ![Shopify App Starter](https://github.com/storetools/shopify-app-starter/assets/29296982/ff753124-10b2-4748-b7f2-03b030c3699d)
 
