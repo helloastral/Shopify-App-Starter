@@ -1,6 +1,6 @@
 # Shopify App Starter by Storetools
 
-![Frame 5](https://github.com/storetools/shopify-app-starter/assets/29296982/ff753124-10b2-4748-b7f2-03b030c3699d)
+![Shopify App Starter](https://github.com/storetools/shopify-app-starter/assets/29296982/ff753124-10b2-4748-b7f2-03b030c3699d)
 
 This is the template we use at Storetools to build our Shopify apps.
 
@@ -14,6 +14,27 @@ But we loose some functionality like being able to plug into the auth check func
 3. Run `yarn`
 4. Run `yarn migrate:dev`
 5. Run `yarn dev`
+
+## Notes
+
+### Install packages
+
+This is a yarn workspace so when you want to install a package run this:
+
+```sh
+# Client
+yarn workspace client add package-name
+# Or
+cd client
+yarn add package-name
+
+# Server
+yarn workspace server add package-name
+# Or
+cd server
+yarn add package-name
+
+```
 
 ## Deploying
 
@@ -90,5 +111,23 @@ async fetchProducts(@ShopClient('gql') gqlClient) {
 - Tailwind CSS
 - Postgres
 - Swagger
+
+## FAQ
+
+### Can I build Shopify Extensions?
+
+Yes, Just generate the extension using the Shopify CLI like how you would with the other templates. It will live inside an `extensions` folder created by shopify. Dev server will work out of the box.
+
+### Does HMR work on development server?
+
+Yes
+
+### Typescript?
+
+Yes
+
+### Tests?
+
+You can write tests as you would on Nest js: https://docs.nestjs.com/fundamentals/testing
 
 Checkout our apps at [storetools.io](https://storetools.io)
