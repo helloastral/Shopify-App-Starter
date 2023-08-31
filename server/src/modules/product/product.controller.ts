@@ -8,7 +8,7 @@ export class ProductController {
 
   @Get()
   async fetchProducts(@ShopSession() session) {
-    console.log("fetching products");
-    return this.productService.fetchProducts(session);
+    const products = await this.productService.fetchProducts(session);
+    return products?.data || [];
   }
 }

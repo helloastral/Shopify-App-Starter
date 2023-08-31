@@ -1,3 +1,28 @@
-# This file stores configurations for your Shopify app.
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
+name = "starter-new-geon"
+client_id = "b9c4b0a063f5b9a14636d1ed024d3710"
+application_url = "https://biography-aye-retreat-ps.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products"
+use_legacy_install_flow = true
+
+[auth]
+redirect_urls = [
+  "https://biography-aye-retreat-ps.trycloudflare.com/auth/callback",
+  "https://biography-aye-retreat-ps.trycloudflare.com/auth/shopify/callback",
+  "https://biography-aye-retreat-ps.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "storetools-beta.myshopify.com"
