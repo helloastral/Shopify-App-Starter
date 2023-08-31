@@ -37,7 +37,9 @@ Visit `/tools/swagger` to see swagger. The API calls are authenticated automatic
 Tailwind CSS works out of the box
 
 ```html
-<h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-300 to-red-600 mb-5">
+<h1
+  className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-300 to-red-600 mb-5"
+>
   Products
 </h1>
 ```
@@ -79,7 +81,3 @@ async fetchProducts(@ShopClient('gql') gqlClient) {
   // use client to fetch
 }
 ```
-
-
-
-
