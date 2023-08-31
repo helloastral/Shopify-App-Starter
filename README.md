@@ -24,15 +24,6 @@ Checkout both `nixpacks.toml` and `Dockerfile`
 
 Look at the Dockerfile for the commands to run. You'll need to set the environment variables in your deployment environment.
 
-## Software Used
-
-- Shopify App CLI
-- NestJS
-- PrismaJS
-- Tailwind CSS
-- Postgres
-- Swagger
-
 ## Features
 
 ### 1. Swagger
@@ -55,7 +46,7 @@ Tailwind CSS works out of the box
 
 ### 3. Shopify CLI
 
-Run development server using shopify CLI without having to update any URLS
+Run development server using shopify CLI without having to update any URLs
 
 ```sh
 yarn dev
@@ -90,3 +81,14 @@ async fetchProducts(@ShopClient('gql') gqlClient) {
   // use client to fetch
 }
 ```
+
+## Software Used
+
+- Shopify App CLI
+- NestJS
+- PrismaJS
+- Tailwind CSS
+- Postgres
+- Swagger
+
+Checkout our apps at Storetools.io
