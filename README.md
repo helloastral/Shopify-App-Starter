@@ -9,8 +9,7 @@
 
 This is the template we use at Storetools to build our Shopify apps.
 
-This is a fork of [App Starter Nest](https://github.com/storetools/App-Starter-Nest) using the `@shopify/shopify-app-express` package. This cleans up the code significantly.
-But we loose some functionality like being able to plug into the auth check functions to add our own logic.
+This is a fork of [App Starter Nest](https://github.com/storetools/App-Starter-Nest) we use but now using the `@shopify/shopify-app-express` package.
 
 ## Getting Started
 
