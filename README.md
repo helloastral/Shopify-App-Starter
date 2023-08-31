@@ -1,5 +1,8 @@
 # Shopify App Starter by Storetools
 
+![Frame 5](https://github.com/storetools/shopify-app-starter/assets/29296982/ff753124-10b2-4748-b7f2-03b030c3699d)
+
+
 This is a fork of [App Starter Nest](https://github.com/storetools/App-Starter-Nest) using the `@shopify/shopify-app-express` package. This cleans up the code significantly.
 But we loose some functionality like being able to plug into the auth check functions to add our own logic.
 
