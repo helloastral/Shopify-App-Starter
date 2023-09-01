@@ -22,10 +22,18 @@ export function useApi() {
       return config;
     });
 
-    instance.interceptors.response.use((response) => {
-      checkHeadersForReauthorization(response.headers, app);
-      return response;
-    });
+    instance.interceptors.response.use(
+      (response) => {
+        checkHeadersForReauthorization(response.headers, app);
+        return response;
+      },
+      (error) => {
+        if (error.response.headers) {
+          checkHeadersForReauthorization(error.response.headers, app);
+        }
+        return Promise.reject(error);
+      }
+    );
 
     return instance;
   }, [app]);
