@@ -5,7 +5,8 @@
   </p>
 </div>
 
-![Shopify App Starter](https://github.com/storetools/shopify-app-starter/assets/29296982/ff753124-10b2-4748-b7f2-03b030c3699d)
+![Shopify App Starter](https://github.com/storetools/Shopify-App-Starter/assets/29296982/b8c304fa-1894-423b-952d-190d111b6c76)
+
 
 This is the template we use at Storetools to build our Shopify apps.
 
@@ -55,7 +56,8 @@ Look at the Dockerfile for the commands to run. You'll need to set the environme
 
 Visit `/tools/swagger` to see swagger. The API calls are authenticated automatically when used within the app embed
 
-<img width="1511" alt="image" src="https://github.com/storetools/shopify-app-starter/assets/29296982/d82f1efd-048a-4ec1-9de4-5844e160e93b">
+![image](https://github.com/storetools/Shopify-App-Starter/assets/29296982/84dda09a-f0a1-4a54-af97-e3425d0cc7d5)
+
 
 ### 2. Tailwind
 
