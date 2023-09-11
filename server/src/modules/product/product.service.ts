@@ -1,5 +1,5 @@
-import { Injectable } from "@nestjs/common";
-import { ShopifyService } from "src/shared/services/shopify.service";
+import { Injectable } from '@nestjs/common'
+import { ShopifyService } from 'src/shared/services/shopify.service'
 
 @Injectable()
 export class ProductService {
@@ -8,11 +8,11 @@ export class ProductService {
   fetchProducts(session: any) {
     return this.shopify.api.rest.Product.all({
       session,
-    });
+    })
   }
 
   async fetchProductsGQL(gqlClient) {
-    console.log("GQL");
+    console.log('GQL')
     const products = await gqlClient.query({
       data: `{
           products (first: 10) {
@@ -25,7 +25,7 @@ export class ProductService {
             }
           }
         }`,
-    });
-    return products;
+    })
+    return products
   }
 }

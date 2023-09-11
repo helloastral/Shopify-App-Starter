@@ -1,6 +1,6 @@
-import { NestExpressApplication } from "@nestjs/platform-express";
-import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
-import { SwaggerTheme } from "swagger-themes";
+import { NestExpressApplication } from '@nestjs/platform-express'
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
+import { SwaggerTheme } from 'swagger-themes'
 
 /**
  * Swagger
@@ -56,24 +56,24 @@ loadJS(appBridgeUrl, () => {
     loadToken();
   }, 15000);
 });
-`;
+`
 
 function setupSwagger(app: NestExpressApplication, shopify: any) {
   const config = new DocumentBuilder()
-    .setTitle("Invoice App API")
-    .setDescription("Invoice App API description")
-    .setVersion("1.0")
-    .addTag("invoice")
+    .setTitle('Invoice App API')
+    .setDescription('Invoice App API description')
+    .setVersion('1.0')
+    .addTag('invoice')
     .addBearerAuth()
-    .addSecurityRequirements("bearer")
-    .build();
-  const document = SwaggerModule.createDocument(app, config);
+    .addSecurityRequirements('bearer')
+    .build()
+  const document = SwaggerModule.createDocument(app, config)
 
-  const theme = new SwaggerTheme("v3");
+  const theme = new SwaggerTheme('v3')
 
-  SwaggerModule.setup("tools/swagger", app, document, {
+  SwaggerModule.setup('tools/swagger', app, document, {
     explorer: true,
-    customCss: theme.getBuffer("feeling-blue"),
+    customCss: theme.getBuffer('feeling-blue'),
     // You can also move client side SwaggerClientJs to assets folder in the client directory if you want and access it directly using `/assets/swagger-ui.js`
     // customJs: "/assets/swagger-ui.js",
     customJsStr: /* js */ `
@@ -84,11 +84,11 @@ function setupSwagger(app: NestExpressApplication, shopify: any) {
   `,
     swaggerOptions: {
       requestInterceptor: (req) => {
-        req.headers.Authorization = `Bearer ${window["TOKEN"]}`;
-        return req;
+        req.headers.Authorization = `Bearer ${window['TOKEN']}`
+        return req
       },
     },
-  });
+  })
 }
 
-export default setupSwagger;
+export default setupSwagger

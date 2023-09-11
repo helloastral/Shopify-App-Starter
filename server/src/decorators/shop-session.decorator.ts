@@ -1,4 +1,4 @@
-import { createParamDecorator, ExecutionContext } from "@nestjs/common";
+import { createParamDecorator, ExecutionContext } from '@nestjs/common'
 
 /**
  * This decorator is used to inject the shopify session into a controller method.
@@ -7,11 +7,11 @@ import { createParamDecorator, ExecutionContext } from "@nestjs/common";
 
 export const ShopSession = createParamDecorator(
   async (_: unknown, ctx: ExecutionContext) => {
-    const http = ctx.switchToHttp();
-    const response = http.getResponse();
+    const http = ctx.switchToHttp()
+    const response = http.getResponse()
 
-    const session = response.locals.shopify.session;
+    const session = response.locals.shopify.session
 
-    return session;
+    return session
   },
-);
+)
