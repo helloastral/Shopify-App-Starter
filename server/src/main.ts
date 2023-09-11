@@ -3,9 +3,9 @@ import { readFileSync } from 'fs'
 import * as express from 'express'
 import * as serveStatic from 'serve-static'
 
-import shopify from '@/lib/shopify-app.js'
+import shopify from './lib/shopify-app.js'
 import bootstrap from './nest-main.js'
-import setupSwagger from '@/lib/setup-swagger.js'
+import setupSwagger from './lib/setup-swagger.js'
 
 const PORT = parseInt(
   process.env.BACKEND_PORT || process.env.PORT || '3000',
@@ -19,7 +19,7 @@ const STATIC_PATH = join(
   '..',
   '..',
   'client',
-  `${isProd ? 'dist' : ''}`,
+  `${isProd ? 'dist' : 'src'}`,
 )
 
 /**

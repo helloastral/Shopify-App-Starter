@@ -2,7 +2,7 @@
 
 name = "starter-new-geon"
 client_id = "b9c4b0a063f5b9a14636d1ed024d3710"
-application_url = "https://biography-aye-retreat-ps.trycloudflare.com"
+application_url = "https://mb-cry-agencies-touched.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -12,9 +12,9 @@ use_legacy_install_flow = true
 
 [auth]
 redirect_urls = [
-  "https://biography-aye-retreat-ps.trycloudflare.com/auth/callback",
-  "https://biography-aye-retreat-ps.trycloudflare.com/auth/shopify/callback",
-  "https://biography-aye-retreat-ps.trycloudflare.com/api/auth/callback"
+  "https://mb-cry-agencies-touched.trycloudflare.com/auth/callback",
+  "https://mb-cry-agencies-touched.trycloudflare.com/auth/shopify/callback",
+  "https://mb-cry-agencies-touched.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
