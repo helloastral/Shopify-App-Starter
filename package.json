@@ -18,8 +18,8 @@
     "migrate:dev": "yarn workspace server prisma migrate dev"
   },
   "dependencies": {
-    "@shopify/app": "^3.47.5",
-    "@shopify/cli": "^3.47.5"
+    "@shopify/app": "^3.49.2",
+    "@shopify/cli": "^3.49.2"
   },
   "devDependencies": {
     "eslint": "^8.35.0"
