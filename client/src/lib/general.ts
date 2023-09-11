@@ -1,19 +1,19 @@
 export const queryString = {
   parse: () => {},
   stringify: (obj: object) => {
-    let str = "";
+    let str = ''
     for (const [key, value] of Object.entries(obj)) {
       if (Array.isArray(value) && value.length > 0) {
-        str += `&${key}[]=`;
-        str += value.join(`&${key}[]=`);
+        str += `&${key}[]=`
+        str += value.join(`&${key}[]=`)
       } else {
-        str += `&${key}=${value}`;
+        str += `&${key}=${value}`
       }
     }
 
     if (str.length > 0) {
-      str = encodeURI(str.replace("&", "?"));
+      str = encodeURI(str.replace('&', '?'))
     }
-    return str;
+    return str
   },
-};
+}

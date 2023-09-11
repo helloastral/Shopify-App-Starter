@@ -3,7 +3,7 @@ import {
   QueryClientProvider,
   QueryCache,
   MutationCache,
-} from "@tanstack/react-query";
+} from '@tanstack/react-query'
 
 /**
  * Sets up the QueryClientProvider from react-query.
@@ -13,7 +13,7 @@ export function GraphQLProvider({ children }: React.PropsWithChildren<{}>) {
   const client = new QueryClient({
     queryCache: new QueryCache(),
     mutationCache: new MutationCache(),
-  });
+  })
 
-  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+  return <QueryClientProvider client={client}>{children}</QueryClientProvider>
 }

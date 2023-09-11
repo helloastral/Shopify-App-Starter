@@ -1,6 +1,6 @@
-import { useAuthenticatedFetch } from "./useAuthenticatedFetch";
-import { useMemo } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { useAuthenticatedFetch } from './useAuthenticatedFetch'
+import { useMemo } from 'react'
+import { useQuery } from '@tanstack/react-query'
 
 /**
  * A hook for querying your custom app data.
@@ -16,9 +16,9 @@ import { useQuery } from "@tanstack/react-query";
  */
 
 interface Props {
-  url: string;
-  fetchInit?: any;
-  reactQueryOptions?: any;
+  url: string
+  fetchInit?: any
+  reactQueryOptions?: any
 }
 
 export const useAppQuery = ({
@@ -26,16 +26,16 @@ export const useAppQuery = ({
   fetchInit = {},
   reactQueryOptions,
 }: Props) => {
-  const authenticatedFetch = useAuthenticatedFetch();
+  const authenticatedFetch = useAuthenticatedFetch()
   const fetch = useMemo(() => {
     return async () => {
-      const response = await authenticatedFetch(url, fetchInit);
-      return response.json();
-    };
-  }, [url, JSON.stringify(fetchInit)]);
+      const response = await authenticatedFetch(url, fetchInit)
+      return response.json()
+    }
+  }, [url, JSON.stringify(fetchInit)])
 
   return useQuery([url], fetch, {
     ...reactQueryOptions,
     refetchOnWindowFocus: false,
-  });
-};
+  })
+}
