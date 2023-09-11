@@ -1,5 +1,5 @@
 export const queryString = {
-  parse: () => {},
+  parse: () => ({}),
   stringify: (obj: object) => {
     let str = ''
     for (const [key, value] of Object.entries(obj)) {

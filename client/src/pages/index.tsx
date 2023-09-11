@@ -1,7 +1,7 @@
 import { Card, Page, Layout } from '@shopify/polaris'
 
 import { useEffect } from 'react'
-import { useApi } from '../hooks/useApi'
+import { useApi } from '@/hooks/useApi'
 import { useQuery } from '@tanstack/react-query'
 
 export default function HomePage() {
