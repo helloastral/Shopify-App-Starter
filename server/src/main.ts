@@ -1,6 +1,7 @@
 import { join } from 'path'
 import { readFileSync } from 'fs'
 import * as express from 'express'
+import { Request, Response, NextFunction } from 'express'
 import * as serveStatic from 'serve-static'
 
 import shopify from './lib/shopify-app.js'
@@ -71,11 +72,11 @@ async function main() {
 
   setupSwagger(nestApp, shopify)
 
-  nestApp.use(async (_req, res, _next) => {
-    const url = _req.originalUrl
+  nestApp.use(async (req: Request, res: Response, next: NextFunction) => {
+    const url = req.originalUrl
     if (url.startsWith('/api')) {
       console.log(`Bypassing API ${url} in static index middleware`)
-      return _next()
+      return next()
     }
 
     const customNextFn = () => {
@@ -86,7 +87,7 @@ async function main() {
         .send(readFileSync(join(STATIC_PATH, 'index.html')))
     }
 
-    return shopify.ensureInstalledOnShop()(_req, res, customNextFn)
+    return shopify.ensureInstalledOnShop()(req, res, customNextFn)
   })
 
   nestApp.listen(PORT).then(() => {
