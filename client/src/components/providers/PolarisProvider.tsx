@@ -52,8 +52,9 @@ function AppBridgeLink({
  * PolarisProvider also passes translations to Polaris.
  *
  */
-export function PolarisProvider({ children }: React.PropsWithChildren<{}>) {
+export function PolarisProvider({ children }: { children: React.ReactNode }) {
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     <AppProvider i18n={translations} linkComponent={AppBridgeLink}>
       {children}
