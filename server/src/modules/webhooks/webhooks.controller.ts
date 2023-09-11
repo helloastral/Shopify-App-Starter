@@ -1,6 +1,6 @@
-import { Controller, Post, Req, Res } from "@nestjs/common";
-import { Request } from "express";
-import { ShopifyService } from "@/shared/services/shopify.service";
+import { Controller, Post, Req, Res } from '@nestjs/common'
+import { Request } from 'express'
+import { ShopifyService } from '@/shared/services/shopify.service'
 
 /**
  * Make sure this path is what you provide in server/src/lib/shopify-app.ts
@@ -10,7 +10,7 @@ import { ShopifyService } from "@/shared/services/shopify.service";
  * To find the cloudflare url(shopify cli doesn't show this anymore), inspect your app iframe and look for the url in the src attribute
  */
 
-@Controller("webhooks")
+@Controller('webhooks')
 export class WebhooksController {
   constructor(private readonly shopify: ShopifyService) {}
 
@@ -21,9 +21,9 @@ export class WebhooksController {
         rawBody: req.body,
         rawRequest: req,
         rawResponse: res,
-      });
+      })
 
-      console.log("Webhooks validates data ", data);
+      console.log('Webhooks validates data ', data)
 
       // The shape of this data is not very typescript friendly
       // {
@@ -41,13 +41,13 @@ export class WebhooksController {
         rawBody: req.body,
         rawRequest: req,
         rawResponse: res,
-      });
+      })
 
-      console.log(`Webhook processed, returned status code 200`);
+      console.log(`Webhook processed, returned status code 200`)
     } catch (e) {
-      console.log(`Failed to process webhook: ${e.message}`);
+      console.log(`Failed to process webhook: ${e.message}`)
       if (!res.headersSent) {
-        res.status(400).send(e.message);
+        res.status(400).send(e.message)
       }
     }
   }

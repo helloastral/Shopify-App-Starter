@@ -1,4 +1,4 @@
-import { DeliveryMethod } from "@shopify/shopify-api";
+import { DeliveryMethod } from '@shopify/shopify-api'
 
 /**
  * @type {{[key: string]: import("@shopify/shopify-api").WebhookHandler}}
@@ -12,9 +12,9 @@ export default {
    */
   CUSTOMERS_DATA_REQUEST: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks",
+    callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = JSON.parse(body);
+      const payload = JSON.parse(body)
       // Payload has the following shape:
       // {
       //   "shop_id": 954889,
@@ -44,9 +44,9 @@ export default {
    */
   CUSTOMERS_REDACT: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks",
+    callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = JSON.parse(body);
+      const payload = JSON.parse(body)
       // Payload has the following shape:
       // {
       //   "shop_id": 954889,
@@ -73,9 +73,9 @@ export default {
    */
   SHOP_REDACT: {
     deliveryMethod: DeliveryMethod.Http,
-    callbackUrl: "/api/webhooks",
+    callbackUrl: '/api/webhooks',
     callback: async (topic, shop, body, webhookId) => {
-      const payload = JSON.parse(body);
+      const payload = JSON.parse(body)
       // Payload has the following shape:
       // {
       //   "shop_id": 954889,
@@ -83,4 +83,4 @@ export default {
       // }
     },
   },
-};
+}
