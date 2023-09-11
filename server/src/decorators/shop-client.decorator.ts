@@ -1,5 +1,5 @@
 import { createParamDecorator, ExecutionContext } from "@nestjs/common";
-import shopify from "src/lib/shopify-app";
+import shopify from "@/lib/shopify-app";
 
 /**
  * This decorator is used to inject the shopify rest or gql client into a controller method. There is one arguement required.

@@ -1,6 +1,6 @@
 import { Controller, Post, Req, Res } from "@nestjs/common";
 import { Request } from "express";
-import { ShopifyService } from "src/shared/services/shopify.service";
+import { ShopifyService } from "@/shared/services/shopify.service";
 
 /**
  * Make sure this path is what you provide in server/src/lib/shopify-app.ts
