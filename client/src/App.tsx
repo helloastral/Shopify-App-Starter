@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { NavigationMenu } from "@shopify/app-bridge-react";
-import Routes from "./Routes";
+import Routes from "../Routes";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import {
   AppBridgeProvider,
