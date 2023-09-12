@@ -39,8 +39,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^4.4.0",
     "rxjs": "^7.8.0",
-    "swagger-themes": "^1.2.29",
-    "typescript": "^5.2.2"
+    "swagger-themes": "^1.2.29"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.1.17",
