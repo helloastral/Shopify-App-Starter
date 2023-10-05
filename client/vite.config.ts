@@ -45,6 +45,9 @@ if (host === 'localhost') {
 
 export default defineConfig({
   root: join(dirname(fileURLToPath(import.meta.url)), 'src'),
+  build: {
+    outDir: '../dist',
+  },
   plugins: [
     react(),
     optimizeLodashImports({ useLodashEs: true }),
