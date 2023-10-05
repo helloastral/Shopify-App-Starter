@@ -6,7 +6,7 @@ nixPkgs = ['nodejs', 'yarn']
 cmds = ['yarn install']
 
 [phases.build]
-cmds = ['yarn workspace client build','yarn workspace server build']
+cmds = ['yarn workspace client build','yarn workspace server build:prod']
 
 [start]
 cmd = 'node server/dist/main'
