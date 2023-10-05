@@ -15,6 +15,10 @@ This is a fork of [App Starter Nest](https://github.com/storetools/App-Starter-N
 ## Getting Started
 
 1. Clone this repo
+```sh
+npx degit git@github.com:storetools/Shopify-App-Starter.git app-name
+```
+
 2. Copy `.env.example` to `.env` and fill in the values
 3. Run `yarn`
 4. Run `yarn migrate:dev`
