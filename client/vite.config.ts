@@ -22,9 +22,7 @@ const proxyOptions = {
   ws: false,
 }
 
-const host = process.env.HOST
-  ? process.env.HOST.replace(/https?:\/\//, '')
-  : 'localhost'
+const host = new URL(process.env.SHOPIFY_APP_URL || 'http://localhost').hostname
 
 let hmrConfig
 if (host === 'localhost') {
@@ -66,7 +64,6 @@ export default defineConfig({
     },
   },
   server: {
-    host: 'localhost',
     port: parseInt(process.env.FRONTEND_PORT as string) || 4000,
     hmr: hmrConfig,
     proxy: {
