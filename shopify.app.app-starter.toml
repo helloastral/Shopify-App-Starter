@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "app-starter"
+client_id = "f004bad6f0b525191f18cbae72e4fe07"
+application_url = "https://billy-responding-petite-heard.trycloudflare.com"
+web_directories = [ "server", "client" ]
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://billy-responding-petite-heard.trycloudflare.com/auth/callback",
+  "https://billy-responding-petite-heard.trycloudflare.com/auth/shopify/callback",
+  "https://billy-responding-petite-heard.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-07"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "storetools-delta.myshopify.com"

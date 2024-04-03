@@ -7,7 +7,6 @@
 
 ![Shopify App Starter](https://github.com/storetools/Shopify-App-Starter/assets/29296982/b8c304fa-1894-423b-952d-190d111b6c76)
 
-
 This is the template we use at Storetools to build our Shopify apps.
 
 This is a fork of [App Starter Nest](https://github.com/storetools/App-Starter-Nest) we use but now using the `@shopify/shopify-app-express` package.
@@ -15,6 +14,7 @@ This is a fork of [App Starter Nest](https://github.com/storetools/App-Starter-N
 ## Getting Started
 
 1. Clone this repo
+
 ```sh
 npx degit git@github.com:storetools/Shopify-App-Starter.git app-name
 ```
@@ -61,7 +61,6 @@ Look at the Dockerfile for the commands to run. You'll need to set the environme
 Visit `/tools/swagger` to see swagger. The API calls are authenticated automatically when used within the app embed
 
 ![image](https://github.com/storetools/Shopify-App-Starter/assets/29296982/84dda09a-f0a1-4a54-af97-e3425d0cc7d5)
-
 
 ### 2. Tailwind
 
@@ -141,3 +140,11 @@ Yes
 You can write tests as you would on Nest js: https://docs.nestjs.com/fundamentals/testing
 
 Checkout our apps at [storetools.io](https://storetools.io)
+
+## Important
+
+Make sure you add in your `shopify.app.xyz.toml` the following. So the server always start first for vite proxy to work properly.
+
+```toml
+web_directories = [ "server", "client" ]
+```
