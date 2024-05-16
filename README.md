@@ -1,3 +1,7 @@
+> Although this works we recommend you use our remix-nest starter for new apps
+> See our latest starter here: https://github.com/helloastral/Astral-App
+
+
 <div align="center">
   <h1>App Starter By Storetools 🔮</h1>
   <p>
